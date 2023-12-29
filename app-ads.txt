@@ -1,3 +1,4 @@
+google.com, pub-2610408223315822, DIRECT, f08c47fec0942fa0
 applovin.com, bf0506f52810840bf31168828ca1aef8, DIRECT
 facebook.com, 1049258139373094, RESELLER, c3e20eee3f780d68
 loopme.com, 11303, RESELLER, 6c8d5f95897a5a3b
