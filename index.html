@@ -1,1 +1,140 @@
-Hello
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devayu Labs</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 0.5em;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 1em;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        main {
+            flex: 1;
+            padding: 2em;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        .card img {
+            width: 80px; /* Adjust the width as needed */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Devayu Labs</h1>
+    </header>
+
+    <nav>
+        <a onclick="loadHome()">Home</a>
+        <a onclick="openPrivacy()">Privacy Policy</a>
+    </nav>
+
+    <main id="content">
+        <!-- Content will be dynamically loaded here -->
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Devayu Labs. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function loadPage(page) {
+            fetch(page)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
+                    }
+                    return response.text();
+                })
+                .then(content => {
+                    document.getElementById("content").innerHTML = content;
+                })
+                .catch(error => console.error('Error fetching content:', error));
+        }
+
+        function loadHome() {
+            var homeContent = `
+                <div class="card">
+                    <img src="ic_launcher.png" alt="Home Icon">
+                    <h3>Impact Crosshair</h3>
+                    <p>Ultimate precision shooting assistant designed to help you become a legendary sniper of FPS shooting Games.</p>
+                </div>
+            `;
+            document.getElementById("content").innerHTML = homeContent;
+        }
+
+        function openPrivacy() {
+            window.open('privacy.html', '_blank');
+        }
+
+        // Load default content on page load
+        loadHome();
+    </script>
+    
+</body>
+</html>
