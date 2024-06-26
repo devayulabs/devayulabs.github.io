@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enable USB Debugging and Execute ADB Commands</title>
+    <title>Grant Overlay Permission through ADB Command</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,7 +13,8 @@
             color: #333;
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             color: #333;
         }
 
@@ -56,7 +57,16 @@
 
 <body>
 
-    <h1>How to Enable USB Debugging and Execute ADB Commands</h1>
+    <h1>Grant Overlay Permission through ADB Command</h1>
+
+    <div class="section">
+        <h2>Requirements</h2>
+        <ul>
+            <li>A PC</li>
+            <li>A USB cable to connect your Android device to your PC</li>
+            <li>Android Device</li>
+        </ul>
+    </div>
 
     <div class="section">
         <h2>Step 1: Enable Developer Options</h2>
@@ -67,7 +77,8 @@
             <img src="artifacts/about_phone.png" alt="About phone" class="step-image">
             <li>Find the <strong>Build number</strong> entry.</li>
             <img src="artifacts/build_number.png" alt="Build number" class="step-image">
-            <li>Tap the <strong>Build number</strong> entry seven times. You may be prompted to enter your device's PIN or password.</li>
+            <li>Tap the <strong>Build number</strong> entry seven times. You may be prompted to enter your device's PIN
+                or password.</li>
             <li>You should see a message saying "You are now a developer!" or "Developer mode has been enabled".</li>
             <!-- <img src="path/to/developer_mode.png" alt="Developer mode enabled" class="step-image"> -->
         </ol>
@@ -91,7 +102,8 @@
     <div class="section">
         <h2>Step 3: Install ADB on Your PC</h2>
         <ol>
-            <li>Download the <a href="https://developer.android.com/studio/releases/platform-tools">ADB platform-tools</a> package for your operating system.</li>
+            <li>Download the <a href="https://developer.android.com/studio/releases/platform-tools">ADB
+                    platform-tools</a> package for your operating system.</li>
             <li>Extract the downloaded ZIP file to a location on your PC.</li>
             <li>Open a command prompt or terminal window.</li>
             <li>Navigate to the directory where you extracted the platform-tools.</li>
@@ -103,30 +115,35 @@
         <ol>
             <li>Connect your Android device to your PC using a USB cable and select file transfer in USB Settings.</li>
             <img src="artifacts/usb_settings.png" alt="Allow USB debugging" class="step-image">
-            <li>You may see a prompt on your device asking you to allow USB debugging. Tap <strong>OK</strong> to allow it.</li>
+            <li>You may see a prompt on your device asking you to allow USB debugging. Tap <strong>OK</strong> to allow
+                it.</li>
             <img src="artifacts/usb_authorization.png" alt="Allow USB debugging" class="step-image">
         </ol>
     </div>
 
     <div class="section">
         <h2>Step 5: Execute ADB Commands</h2>
-        <p>To verify that your device is connected properly, run the following command in the command prompt or terminal:</p>
+        <p>To verify that your device is connected properly, run the following command in the command prompt or
+            terminal:</p>
         <pre><code>adb devices</code></pre>
         <img src="artifacts/adb_devices.png" alt="ADB devices" class="step-image">
 
-        <p>You should see a list of connected devices. If your device is listed, you can start executing ADB commands to grant Overlay permission.</p>
+        <p>You should see a list of connected devices. If your device is listed, you can start executing ADB commands to
+            grant Overlay permission.</p>
     </div>
 
     <div class="section">
         <h2>Step 6: Grant Overlay Permission to Game Mode</h2>
-        <p>To grant overlay permission to the <code>com.devayulabs.gamemode</code> app, execute the following ADB command:</p>
+        <p>To grant overlay permission to the <code>com.devayulabs.gamemode</code> app, execute the following ADB
+            command:</p>
         <pre><code>adb shell pm grant com.devayulabs.gamemode android.permission.SYSTEM_ALERT_WINDOW</code></pre>
         <img src="artifacts/grant_overlay_permission.png" alt="Grant overlay permission" class="step-image">
     </div>
 
     <div class="section">
         <h2>Final Step: Open the App and Enable Game Panel</h2>
-        <p>Finally, open the <strong>Game Mode</strong> app on your Android device and enable the Game Panel feature.</p>
+        <p>Finally, open the <strong>Game Mode</strong> app on your Android device and enable the Game Panel feature.
+        </p>
     </div>
 
 </body>
