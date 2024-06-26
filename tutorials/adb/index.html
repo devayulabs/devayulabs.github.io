@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enable USB Debugging and Execute ADB Commands</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        h2 {
+            color: #555;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow: auto;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .step-image {
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>How to Enable USB Debugging and Execute ADB Commands</h1>
+
+    <div class="section">
+        <h2>Step 1: Enable Developer Options</h2>
+        <ol>
+            <li>Open the <strong>Settings</strong> app on your Android device.</li>
+            <img src="artifacts/settings_app.png" alt="Settings app" class="step-image">
+            <li>Scroll down and select <strong>About phone</strong>.</li>
+            <img src="artifacts/about_phone.png" alt="About phone" class="step-image">
+            <li>Find the <strong>Build number</strong> entry.</li>
+            <img src="artifacts/build_number.png" alt="Build number" class="step-image">
+            <li>Tap the <strong>Build number</strong> entry seven times. You may be prompted to enter your device's PIN
+                or password.</li>
+            You should see a message saying "You are now a developer!" or "Developer mode has been enabled".
+            <!-- <img src="path/to/developer_mode.png" alt="Developer mode enabled" class="step-image"> -->
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Step 2: Enable USB Debugging</h2>
+        <ol>
+            <li>Go back to the <strong>Settings</strong> menu.</li>
+            <li>Scroll down and select <strong>System</strong> (or <strong>Additional settings</strong>).</li>
+            <img src="artifacts/system_settings.png" alt="System settings" class="step-image">
+            <li>Tap on <strong>Developer options</strong>.</li>
+            <img src="artifacts/developer_options.png" alt="Developer options" class="step-image">
+            <li>Scroll down and find the <strong>USB debugging</strong> option.</li>
+            <img src="artifacts/usb_debugging.png" alt="USB debugging" class="step-image">
+            <li>Toggle the <strong>USB debugging</strong> switch to turn it on.</li>
+            <li>Confirm the action if prompted.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Step 3: Install ADB on Your PC</h2>
+        <p>Follow these steps to install ADB on your PC:</p>
+        <ol>
+            <li>Download the <a href="https://developer.android.com/studio/releases/platform-tools">ADB
+                    platform-tools</a> package for your operating system.</li>
+            <li>Extract the downloaded ZIP file to a location on your PC.</li>
+            <li>Open a command prompt or terminal window.</li>
+            <li>Navigate to the directory where you extracted the platform-tools.</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Step 4: Connect Your Android Device to Your PC</h2>
+        <ol>
+            <li>Connect your Android device to your PC using a USB cable and select file transfer in USB Settings.</li>
+            <img src="artifacts/usb_settings.png" alt="Allow USB debugging" class="step-image">
+            <li>You may see a prompt on your device asking you to allow USB debugging. Tap <strong>OK</strong> to allow
+                it.</li>
+            <img src="artifacts/usb_authorization.png" alt="Allow USB debugging" class="step-image">
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Step 5: Execute ADB Commands</h2>
+        <p>To verify that your device is connected properly, run the following command in the command prompt or
+            terminal:</p>
+        <pre><code>adb devices</code></pre>
+        <img src="artifacts/adb_devices.png" alt="ADB devices" class="step-image">
+
+        <p>You should see a list of connected devices. If your device is listed, you can start executing ADB command to
+            grant Overlay permission.
+    </div>
+
+    <div class="section">
+        <h2>Step 6: Grant Overlay Permission to Game Mode</h2>
+        <p>To grant overlay permission to the <code>com.devayulabs.gamemode</code> app, execute the following ADB
+            command:</p>
+        <pre><code>adb shell pm grant com.devayulabs.gamemode android.permission.SYSTEM_ALERT_WINDOW</code></pre>
+        <img src="artifacts/grant_overlay_permission.png" alt="ADB devices" class="step-image">
+    </div>
+
+    <div class="section">
+        <h2>Final Step 7: Open the App and Enable Game Panel</h2>
+        <p>Finally, open the <strong>Game Mode</strong> app on your Android device and enable the Game Panel feature.</p>
+    </div>
+</body>
+</html>
