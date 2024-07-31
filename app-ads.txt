@@ -9,6 +9,8 @@ pubmatic.com, 159509, RESELLER, 5d62403b186f2ace
 xandr.com, 13799, RESELLER
 media.net, 8CUD06Z68, RESELLER
 
+tradplusad.com,f609ce219199c78a,DIRECT
+
 # Unity Ads
 aceinmobi.com, 9e311c7a68e94888aac7fbb4272381e2, RESELLER
 adform.com, 716, RESELLER
